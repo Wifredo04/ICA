@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+  PLANTILLA-TRABAJO.HTML
+  ¡Este es el archivo más importante para el día a día del sitio!
+
+  CÓMO PUBLICAR UN TRABAJO NUEVO, PASO A PASO:
+  1. En VS Code, haz clic derecho sobre este archivo -> "Copy" ->
+     clic derecho en la carpeta -> "Paste". Se creará una copia
+     llamada "plantilla-trabajo copy.html" o similar.
+  2. Renombra esa copia con un nombre corto y sin espacios que
+     describa el trabajo, por ejemplo: trabajo-piso-sala-enero.html
+  3. Abre el archivo nuevo y busca cada bloque marcado con
+     "EDITA ESTO" más abajo. Cambia el texto y las fotos.
+  4. Borra esta nota y la meta-etiqueta "noindex" del <head> (están
+     marcadas más abajo) — esas dos cosas son solo para que ESTA
+     plantilla en blanco no aparezca en Google por accidente.
+  5. Ve a trabajos.html, busca la categoría correspondiente, copia
+     un bloque <article class="tarjeta-trabajo"> y actualiza su
+     "href" para que apunte al archivo nuevo que creaste.
+  6. Guarda, y sube los cambios con: git add . / git commit -m "..." / git push
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- EDITA ESTO: título único para este trabajo -->
+  <title>Piso de sala en porcelanato líquido gris | [Tu Marca]</title>
+
+  <!-- EDITA ESTO: descripción de 1-2 frases sobre este trabajo en particular -->
+  <meta name="description" content="Renovación de un piso de sala con porcelanato líquido gris, acabado continuo y de alto brillo, en Santiago de los Caballeros.">
+
+  <!-- EDITA ESTO: cambia "plantilla-trabajo.html" por el nombre real del archivo -->
+  <link rel="canonical" href="https://tu-usuario.github.io/nombre-repo/plantilla-trabajo.html">
+
+  <!--
+    IMPORTANTE: esta línea le dice a Google "no muestres esta
+    página en tus resultados de búsqueda". La dejamos aquí para
+    que la plantilla en blanco nunca aparezca indexada. BÓRRALA
+    en cada copia que conviertas en un trabajo real.
+  -->
+  <meta name="robots" content="noindex">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Piso de sala en porcelanato líquido gris | [Tu Marca]">
+  <meta property="og:description" content="Renovación de un piso de sala con porcelanato líquido gris, acabado continuo y de alto brillo.">
+  <meta property="og:image" content="https://tu-usuario.github.io/nombre-repo/img/portada-social.jpg">
+  <meta property="og:locale" content="es_ES">
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera-fila">
+      <a href="index.html" class="marca">[Tu Marca]</a>
+      <button type="button" class="menu-boton" id="boton-menu" aria-expanded="false" aria-controls="nav-principal">
+        <span class="menu-boton-linea"></span>
+        <span class="menu-boton-linea"></span>
+        <span class="menu-boton-linea"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+      <nav class="nav" id="nav-principal" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="trabajos.html" aria-current="page">Trabajos</a>
+        <a href="sobre.html">Sobre mí</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <a href="trabajos.html" class="volver-enlace">← Volver a Trabajos</a>
+
+      <!-- EDITA ESTO: título del trabajo -->
+      <h1>Piso de sala en porcelanato líquido gris</h1>
+
+      <!-- EDITA ESTO: la categoría y, si quieres, el mes/año -->
+      <p class="trabajo-meta">
+        <span class="etiqueta-categoria">Pisos</span>
+        <span>Santiago de los Caballeros</span>
+      </p>
+
+      <!-- EDITA ESTO: foto principal grande. Sube tu foto a la carpeta img/ y escribe su nombre aquí -->
+      <img src="img/placeholder.svg" alt="Piso de sala terminado en porcelanato líquido color gris" class="trabajo-imagen-principal" width="1200" height="750">
+
+      <div class="trabajo-cuerpo">
+        <!-- EDITA ESTO: cuenta la historia del trabajo en 2-4 párrafos cortos -->
+        <p>El punto de partida era un piso de cerámica de más de quince años, con varias piezas rotas y un patrón que ya no combinaba con el resto de la casa. En vez de levantar y volver a poner cerámica, la familia buscaba algo continuo, sin juntas y más fácil de limpiar.</p>
+
+        <p>Aplicamos porcelanato líquido gris directamente sobre la superficie existente, después de lijar y sellar bien la base. El material se trabaja en capas finas y se nivela solo, por eso el acabado queda parejo de pared a pared.</p>
+
+        <p>El resultado es un piso continuo, brillante y resistente al tránsito diario, sin la interrupción visual de las juntas de la cerámica original.</p>
+      </div>
+
+      <!-- EDITA ESTO: 3 a 6 fotos de detalle o del proceso. Puedes borrar o agregar bloques <img> según cuántas fotos tengas -->
+      <div class="galeria-trabajo">
+        <img src="img/placeholder.svg" alt="Detalle del acabado brillante del piso" width="400" height="400">
+        <img src="img/placeholder.svg" alt="Proceso de aplicación del porcelanato líquido" width="400" height="400">
+        <img src="img/placeholder.svg" alt="Vista completa de la sala terminada" width="400" height="400">
+      </div>
+
+      <div class="caja-cta">
+        <h2>¿Quieres un piso así en tu casa o negocio?</h2>
+        <p>Escríbenos con las medidas del espacio y te respondemos con tiempos y precio estimado.</p>
+        <a href="contacto.html" class="boton boton-primario">Escríbenos</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pie">
+    <div class="contenedor pie-fila">
+      <div>
+        <h3>[Tu Marca]</h3>
+        <p>Resina epóxica y porcelanato líquido. Santiago de los Caballeros, República Dominicana.</p>
+      </div>
+      <div>
+        <h3>Recorre el sitio</h3>
+        <nav aria-label="Pie de página">
+          <a href="index.html">Inicio</a><br>
+          <a href="trabajos.html">Trabajos</a><br>
+          <a href="sobre.html">Sobre mí</a><br>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+      <div>
+        <h3>Escríbenos</h3>
+        <div class="pie-redes">
+          <a href="https://wa.me/18090000000">WhatsApp</a>
+          <a href="https://instagram.com/tu_usuario">Instagram</a>
+        </div>
+      </div>
+      <p class="pie-copyright">© <span id="anio"></span> [Tu Marca]. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

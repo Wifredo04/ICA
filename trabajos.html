@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--
+  TRABAJOS.HTML — Portafolio / blog de trabajos realizados.
+
+  Esta es la página que más vas a actualizar. Cada vez que termines
+  un trabajo nuevo:
+    1. Duplica "plantilla-trabajo.html", renómbrala (ej: trabajo-piso-2026-01.html)
+       y edita su contenido con las fotos y el texto del trabajo real.
+    2. Ven aquí, busca la categoría correspondiente, y agrega una
+       tarjeta nueva copiando un bloque <article class="tarjeta-trabajo">
+       existente, cambiando la foto, el título, la descripción y el
+       "href" para que apunte al archivo que creaste en el paso 1.
+
+  Las tarjetas de ejemplo que hay ahora mismo son solo ilustrativas
+  (para que veas el formato) y todas apuntan a "plantilla-trabajo.html".
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trabajos: pisos, mesas, paredes 3D, cuadros y bisutería en resina | [Tu Marca]</title>
+  <meta name="description" content="Galería de trabajos en resina epóxica y porcelanato líquido: pisos, mesas artesanales, paredes en 3D, cuadros decorativos y bisutería.">
+  <link rel="canonical" href="https://tu-usuario.github.io/nombre-repo/trabajos.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tu-usuario.github.io/nombre-repo/trabajos.html">
+  <meta property="og:title" content="Trabajos en resina epóxica y porcelanato líquido | [Tu Marca]">
+  <meta property="og:description" content="Pisos, mesas, paredes en 3D, cuadros y bisutería hechos a mano.">
+  <meta property="og:image" content="https://tu-usuario.github.io/nombre-repo/img/portada-social.jpg">
+  <meta property="og:locale" content="es_ES">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trabajos en resina epóxica y porcelanato líquido">
+  <meta name="twitter:image" content="https://tu-usuario.github.io/nombre-repo/img/portada-social.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera-fila">
+      <a href="index.html" class="marca">[Tu Marca]</a>
+      <button type="button" class="menu-boton" id="boton-menu" aria-expanded="false" aria-controls="nav-principal">
+        <span class="menu-boton-linea"></span>
+        <span class="menu-boton-linea"></span>
+        <span class="menu-boton-linea"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+      <nav class="nav" id="nav-principal" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="trabajos.html" aria-current="page">Trabajos</a>
+        <a href="sobre.html">Sobre mí</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="seccion seccion-compacta">
+    <div class="contenedor">
+      <h1>Trabajos</h1>
+      <p>Un recorrido por lo que hacemos con resina epóxica y porcelanato líquido, organizado por tipo de trabajo. Usa los botones de abajo para saltar directo a lo que te interesa.</p>
+
+      <!--
+        NAVEGACIÓN RÁPIDA: son enlaces normales de HTML (href="#pisos",
+        etc.) que apuntan a un título más abajo en esta misma página.
+        No necesitan JavaScript — el propio navegador hace el scroll.
+      -->
+      <nav aria-label="Categorías de trabajo" class="fila-filtros">
+        <a href="#pisos" class="filtro-boton">Pisos</a>
+        <a href="#mesas" class="filtro-boton">Mesas</a>
+        <a href="#paredes-3d" class="filtro-boton">Paredes 3D</a>
+        <a href="#cuadros" class="filtro-boton">Cuadros</a>
+        <a href="#bisuteria" class="filtro-boton">Bisutería</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ================= PISOS ================= -->
+  <section class="seccion seccion-compacta">
+    <div class="contenedor">
+      <h2 id="pisos">Pisos de resina y porcelanato líquido</h2>
+      <p>Acabados continuos, brillantes y sin juntas para salas, cocinas, negocios y exteriores.</p>
+
+      <div class="rejilla-categorias">
+        <article class="tarjeta-trabajo">
+          <img src="img/placeholder.svg" alt="Piso de sala renovado con porcelanato líquido gris" width="400" height="300">
+          <div class="tarjeta-trabajo-cuerpo">
+            <span class="etiqueta-categoria">Pisos</span>
+            <h3>Piso de sala en porcelanato líquido gris</h3>
+            <p>Renovación completa sobre un piso de cerámica antigua, con acabado uniforme y alto brillo.</p>
+            <a href="plantilla-trabajo.html" class="enlace-ver-mas">Ver trabajo completo</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-trabajo">
+          <img src="img/placeholder.svg" alt="Piso epóxico de alto tráfico en local comercial" width="400" height="300">
+          <div class="tarjeta-trabajo-cuerpo">
+            <span class="etiqueta-categoria">Pisos</span>
+            <h3>Piso epóxico para local comercial</h3>
+            <p>Resina de alto tráfico, resistente a manchas y fácil de limpiar, para un espacio comercial.</p>
+            <a href="plantilla-trabajo.html" class="enlace-ver-mas">Ver trabajo completo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MESAS ================= -->
+  <section class="seccion seccion-compacta">
+    <div class="contenedor">
+      <h2 id="mesas">Mesas artesanales</h2>
+      <p>Piezas únicas en madera y resina, con efectos de río, océano o marmoleado, hechas a medida.</p>
+
+      <div class="rejilla-categorias">
+        <article class="tarjeta-trabajo">
+          <img src="img/placeholder.svg" alt="Mesa río en madera y resina azul" width="400" height="300">
+          <div class="tarjeta-trabajo-cuerpo">
+            <span class="etiqueta-categoria">Mesas</span>
+            <h3>Mesa río en madera de teca y resina azul</h3>
+            <p>Efecto de agua corriendo entre dos piezas de madera maciza.</p>
+            <a href="plantilla-trabajo.html" class="enlace-ver-mas">Ver trabajo completo</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-trabajo">
+          <img src="img/placeholder.svg" alt="Mesa auxiliar con efecto marmoleado dorado" width="400" height="300">
+          <div class="tarjeta-trabajo-cuerpo">
+            <span class="etiqueta-categoria">Mesas</span>
+            <h3>Mesa auxiliar con efecto marmoleado dorado</h3>
+            <p>Vetas doradas sobre fondo blanco, inspiradas en el mármol Calacatta.</p>
+            <a href="plantilla-trabajo.html" class="enlace-ver-mas">Ver trabajo completo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PAREDES 3D ================= -->
+  <section class="seccion seccion-compacta">
+    <div class="contenedor">
+      <h2 id="paredes-3d">Diseños de pared en 3D</h2>
+      <p>El mismo material de los pisos, llevado a la pared: texturas y relieves que le dan profundidad a cualquier ambiente.</p>
+
+      <div class="rejilla-categorias">
+        <article class="tarjeta-trabajo">
+          <img src="img/placeholder.svg" alt="Pared con diseño 3D en efecto olas" width="400" height="300">
+          <div class="tarjeta-trabajo-cuerpo">
+            <span class="etiqueta-categoria">Paredes 3D</span>
+            <h3>Pared con efecto olas en sala principal</h3>
+            <p>Relieve continuo que recorre toda la pared, iluminado con luz rasante.</p>
+            <a href="plantilla-trabajo.html" class="enlace-ver-mas">Ver trabajo completo</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-trabajo">
+          <img src="img/placeholder.svg" alt="Panel decorativo en relieve para recepción" width="400" height="300">
+          <div class="tarjeta-trabajo-cuerpo">
+            <span class="etiqueta-categoria">Paredes 3D</span>
+            <h3>Panel decorativo en relieve para recepción</h3>
+            <p>Panel geométrico pensado para el área de recepción de una oficina.</p>
+            <a href="plantilla-trabajo.html" class="enlace-ver-mas">Ver trabajo completo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CUADROS ================= -->
+  <section class="seccion seccion-compacta">
+    <div class="contenedor">
+      <h2 id="cuadros">Cuadros decorativos</h2>
+      <p>Piezas de pared hechas a mano, pensadas para un espacio o una persona en particular.</p>
+
+      <div class="rejilla-categorias">
+        <article class="tarjeta-trabajo">
+          <img src="img/placeholder.svg" alt="Cuadro abstracto en tonos verdes y dorados" width="400" height="300">
+          <div class="tarjeta-trabajo-cuerpo">
+            <span class="etiqueta-categoria">Cuadros</span>
+            <h3>Cuadro abstracto en tonos verdes y dorados</h3>
+            <p>Capas de resina con pigmento, pensado como pieza central de una sala.</p>
+            <a href="plantilla-trabajo.html" class="enlace-ver-mas">Ver trabajo completo</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-trabajo">
+          <img src="img/placeholder.svg" alt="Cuadro personalizado con nombre en resina" width="400" height="300">
+          <div class="tarjeta-trabajo-cuerpo">
+            <span class="etiqueta-categoria">Cuadros</span>
+            <h3>Cuadro personalizado con nombre en resina</h3>
+            <p>Pieza de regalo hecha a pedido, con nombre y colores elegidos por el cliente.</p>
+            <a href="plantilla-trabajo.html" class="enlace-ver-mas">Ver trabajo completo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BISUTERÍA ================= -->
+  <section class="seccion seccion-compacta">
+    <div class="contenedor">
+      <h2 id="bisuteria">Bisutería en resina</h2>
+      <p>Aretes, collares y anillos hechos a mano, en piezas pequeñas que aprovechan los mismos materiales de nuestras obras grandes.</p>
+
+      <div class="rejilla-categorias">
+        <article class="tarjeta-trabajo">
+          <img src="img/placeholder.svg" alt="Aretes redondos con flores prensadas en resina" width="400" height="300">
+          <div class="tarjeta-trabajo-cuerpo">
+            <span class="etiqueta-categoria">Bisutería</span>
+            <h3>Aretes redondos con flores prensadas</h3>
+            <p>Flores reales prensadas y selladas en resina transparente.</p>
+            <a href="plantilla-trabajo.html" class="enlace-ver-mas">Ver trabajo completo</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-trabajo">
+          <img src="img/placeholder.svg" alt="Set de collar y aretes en resina dorada y blanca" width="400" height="300">
+          <div class="tarjeta-trabajo-cuerpo">
+            <span class="etiqueta-categoria">Bisutería</span>
+            <h3>Set de collar y aretes en dorado y blanco</h3>
+            <p>Juego a conjunto, hecho con el mismo porcelanato líquido de los pisos.</p>
+            <a href="plantilla-trabajo.html" class="enlace-ver-mas">Ver trabajo completo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pie">
+    <div class="contenedor pie-fila">
+      <div>
+        <h3>[Tu Marca]</h3>
+        <p>Resina epóxica y porcelanato líquido. Santiago de los Caballeros, República Dominicana.</p>
+      </div>
+      <div>
+        <h3>Recorre el sitio</h3>
+        <nav aria-label="Pie de página">
+          <a href="index.html">Inicio</a><br>
+          <a href="trabajos.html">Trabajos</a><br>
+          <a href="sobre.html">Sobre mí</a><br>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+      <div>
+        <h3>Escríbenos</h3>
+        <div class="pie-redes">
+          <a href="https://wa.me/18090000000">WhatsApp</a>
+          <a href="https://instagram.com/tu_usuario">Instagram</a>
+        </div>
+      </div>
+      <p class="pie-copyright">© <span id="anio"></span> [Tu Marca]. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

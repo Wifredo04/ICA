@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!--
+  INDEX.HTML — Página de inicio.
+
+  Cómo está organizado este archivo (y los demás .html del sitio):
+  1. <head>: información que NO se ve en pantalla, pero que Google
+     y las redes sociales usan para entender e indexar la página
+     (título, descripción, imagen de vista previa, etc.).
+  2. <body>: todo lo que sí se ve, de arriba a abajo:
+     encabezado -> hero -> categorías -> sobre el oficio -> CTA
+     final -> pie de página.
+
+  Los comentarios como este que estás leyendo nunca se muestran
+  en el navegador; son solo notas para quien edita el código.
+-->
+<html lang="es">
+<head>
+  <!-- Codificación de caracteres: necesario para que tildes y "ñ" se vean bien -->
+  <meta charset="UTF-8">
+
+  <!-- Hace que el sitio se vea bien en celulares (sin esto, se ve "zoom-out" y diminuto) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+    TÍTULO: es lo primero que Google muestra en los resultados de
+    búsqueda (en azul) y lo que aparece en la pestaña del navegador.
+    Cada página del sitio debe tener un título ÚNICO y descriptivo.
+    Reemplaza "[Tu Marca]" por el nombre real de tu negocio.
+  -->
+  <title>[Tu Marca] · Resina Epóxica y Porcelanato Líquido en Santiago, RD</title>
+
+  <!--
+    META DESCRIPCIÓN: el texto gris que Google muestra debajo del
+    título en los resultados de búsqueda. No afecta directamente
+    el posicionamiento, pero si es clara y atractiva, más gente
+    hace clic — y eso sí ayuda con el tiempo. Ideal: 120-160
+    caracteres.
+  -->
+  <meta name="description" content="Pisos, mesas, paredes en 3D, cuadros y bisutería hechos a mano con resina epóxica y porcelanato líquido en Santiago de los Caballeros, República Dominicana.">
+
+  <!--
+    URL CANÓNICA: le dice a Google "esta es la dirección oficial
+    de esta página", incluso si alguien llega a ella por una URL
+    ligeramente distinta. Reemplaza el dominio completo por el
+    tuyo cuando actives GitHub Pages (o tu dominio propio).
+  -->
+  <link rel="canonical" href="https://tu-usuario.github.io/nombre-repo/index.html">
+
+  <!--
+    OPEN GRAPH: controla cómo se ve el enlace cuando alguien lo
+    comparte en WhatsApp, Facebook o Instagram (imagen, título y
+    descripción de la vista previa). Sin esto, las redes sociales
+    adivinan, y casi siempre adivinan mal.
+  -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tu-usuario.github.io/nombre-repo/index.html">
+  <meta property="og:title" content="[Tu Marca] · Resina Epóxica y Porcelanato Líquido en Santiago, RD">
+  <meta property="og:description" content="Pisos, mesas, paredes en 3D, cuadros y bisutería hechos a mano con resina epóxica y porcelanato líquido.">
+  <!-- Reemplaza esto por una foto real de 1200x630 píxeles cuando la tengas (se ve mucho mejor que un ícono) -->
+  <meta property="og:image" content="https://tu-usuario.github.io/nombre-repo/img/portada-social.jpg">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Igual que Open Graph, pero específico para cuando se comparte en X/Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[Tu Marca] · Resina Epóxica y Porcelanato Líquido">
+  <meta name="twitter:description" content="Pisos, mesas, paredes en 3D, cuadros y bisutería hechos a mano con resina epóxica y porcelanato líquido.">
+  <meta name="twitter:image" content="https://tu-usuario.github.io/nombre-repo/img/portada-social.jpg">
+
+  <!-- Ícono pequeño que aparece en la pestaña del navegador -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Trae las dos tipografías del sitio desde Google Fonts (gratis) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Nuestra única hoja de estilos, compartida por todas las páginas -->
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <!--
+    DATOS ESTRUCTURADOS (JSON-LD): un bloque de información en un
+    formato que los buscadores leen directamente, sin adivinar.
+    Le dice a Google "esto es un negocio local, se llama así, está
+    ubicado aquí, y se le contacta así". Puede ayudar a que
+    aparezcas en Google Maps y en resultados con más detalle.
+    No se muestra en pantalla; es solo para los buscadores.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "[Tu Marca]",
+    "description": "Pisos, muebles, paredes en 3D, cuadros y bisutería hechos con resina epóxica y porcelanato líquido.",
+    "image": "https://tu-usuario.github.io/nombre-repo/img/portada-social.jpg",
+    "url": "https://tu-usuario.github.io/nombre-repo/",
+    "telephone": "+1-809-000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santiago de los Caballeros",
+      "addressCountry": "DO"
+    },
+    "areaServed": "Santiago de los Caballeros, República Dominicana"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ================= ENCABEZADO (igual en las 4 páginas) ================= -->
+  <header class="cabecera">
+    <div class="contenedor cabecera-fila">
+      <a href="index.html" class="marca">[Tu Marca]</a>
+
+      <!-- Botón hamburguesa: solo visible en celular (ver estilos.css sección 5) -->
+      <button type="button" class="menu-boton" id="boton-menu" aria-expanded="false" aria-controls="nav-principal">
+        <span class="menu-boton-linea"></span>
+        <span class="menu-boton-linea"></span>
+        <span class="menu-boton-linea"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+
+      <nav class="nav" id="nav-principal" aria-label="Principal">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="trabajos.html">Trabajos</a>
+        <a href="sobre.html">Sobre mí</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="contenedor hero-fila">
+      <div class="hero-texto">
+        <h1>De un piso completo a un par de aretes.</h1>
+        <p>Trabajamos resina epóxica y porcelanato líquido para transformar pisos, muebles, paredes y accesorios — en Santiago de los Caballeros y toda la República Dominicana.</p>
+        <div class="hero-botones">
+          <a href="trabajos.html" class="boton boton-primario">Ver trabajos</a>
+          <a href="contacto.html" class="boton boton-secundario">Cotizar por WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-imagen">
+        <!--
+          Mientras no tengas una foto de portada, usamos este dibujo
+          simple como ilustración. En cuanto tengas una buena foto
+          de un trabajo terminado, reemplaza el "src" de abajo por
+          algo como "img/piso-resina-portada.jpg" y actualiza el "alt".
+        -->
+        <img src="img/placeholder.svg" alt="Ilustración de un vaciado de resina epóxica en tonos verdes y dorados" width="640" height="480">
+      </div>
+    </div>
+  </section>
+
+  <!--
+    DIVISOR ONDULADO: una curva simple en SVG que separa el hero
+    (oscuro) del contenido (claro), como un vaciado de resina. No
+    es una foto ni necesita internet: es una forma dibujada con
+    coordenadas, así que carga instantáneo.
+  -->
+  <svg class="divisor-ondulado" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,32 C240,80 480,0 720,32 C960,64 1200,0 1440,32 L1440,80 L0,80 Z"></path>
+  </svg>
+
+  <!-- ================= CATEGORÍAS ================= -->
+  <section class="seccion">
+    <div class="contenedor">
+      <h2>Todo lo que hacemos con resina y porcelanato líquido</h2>
+      <p>Cinco maneras de trabajar el mismo material. Haz clic en cualquiera para ver ejemplos.</p>
+
+      <div class="rejilla-categorias">
+        <a href="trabajos.html#pisos" class="tarjeta-categoria">
+          <img src="img/placeholder.svg" alt="Piso terminado con porcelanato líquido" width="400" height="300">
+          <h3>Pisos de resina y porcelanato líquido</h3>
+          <p>Acabados continuos, brillantes y sin juntas para salas, negocios y exteriores.</p>
+        </a>
+
+        <a href="trabajos.html#mesas" class="tarjeta-categoria">
+          <img src="img/placeholder.svg" alt="Mesa artesanal con vaciado de resina" width="400" height="300">
+          <h3>Mesas artesanales</h3>
+          <p>Piezas únicas en madera y resina, con efectos de río, océano o marmoleado.</p>
+        </a>
+
+        <a href="trabajos.html#paredes-3d" class="tarjeta-categoria">
+          <img src="img/placeholder.svg" alt="Diseño de pared en 3D con textura de resina" width="400" height="300">
+          <h3>Diseños de pared en 3D</h3>
+          <p>Texturas y relieves que le dan profundidad a cualquier ambiente.</p>
+        </a>
+
+        <a href="trabajos.html#cuadros" class="tarjeta-categoria">
+          <img src="img/placeholder.svg" alt="Cuadro decorativo hecho con resina epóxica" width="400" height="300">
+          <h3>Cuadros decorativos</h3>
+          <p>Piezas de pared hechas a mano, pensadas para un espacio en particular.</p>
+        </a>
+
+        <a href="trabajos.html#bisuteria" class="tarjeta-categoria">
+          <img src="img/placeholder.svg" alt="Aretes y collares de bisutería en resina" width="400" height="300">
+          <h3>Bisutería en resina</h3>
+          <p>Aretes, collares y anillos hechos a mano en porcelanato líquido o resina epóxica.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOBRE EL OFICIO (resumen, con enlace a la página completa) ================= -->
+  <section class="seccion seccion-dorada">
+    <div class="contenedor hero-fila">
+      <div>
+        <h2>Un material que no perdona errores</h2>
+        <p>El porcelanato líquido y la resina epóxica se trabajan en minutos, antes de que empiecen a secar. Cada pieza que ves en este sitio salió de ese margen de tiempo tan corto — por eso el acabado final depende tanto de la experiencia de quien la hizo.</p>
+        <p><a href="sobre.html" class="enlace-ver-mas">Conoce más sobre el oficio</a></p>
+      </div>
+      <div class="hero-imagen">
+        <img src="img/placeholder.svg" alt="Detalle de un acabado en resina con efecto marmoleado" width="640" height="480">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA FINAL ================= -->
+  <section class="seccion seccion-oscura texto-centrado">
+    <div class="contenedor">
+      <h2>¿Tienes un piso, un mueble o una pared en mente?</h2>
+      <p style="margin-inline:auto;">Cuéntanos qué necesitas y te respondemos con tiempos y precio estimado.</p>
+      <div class="hero-botones" style="justify-content:center; margin-top: var(--espacio-m);">
+        <a href="contacto.html" class="boton boton-primario">Escríbenos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PIE DE PÁGINA (igual en las 4 páginas) ================= -->
+  <footer class="pie">
+    <div class="contenedor pie-fila">
+      <div>
+        <h3>[Tu Marca]</h3>
+        <p>Resina epóxica y porcelanato líquido. Santiago de los Caballeros, República Dominicana.</p>
+      </div>
+      <div>
+        <h3>Recorre el sitio</h3>
+        <nav aria-label="Pie de página">
+          <a href="index.html">Inicio</a><br>
+          <a href="trabajos.html">Trabajos</a><br>
+          <a href="sobre.html">Sobre mí</a><br>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+      <div>
+        <h3>Escríbenos</h3>
+        <div class="pie-redes">
+          <!-- Reemplaza el número y el usuario por los reales -->
+          <a href="https://wa.me/18090000000">WhatsApp</a>
+          <a href="https://instagram.com/tu_usuario">Instagram</a>
+        </div>
+      </div>
+      <p class="pie-copyright">© <span id="anio"></span> [Tu Marca]. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Nuestro único archivo de JavaScript, al final para que la página se vea rápido antes de cargarlo -->
+  <script src="js/script.js"></script>
+</body>
+</html>

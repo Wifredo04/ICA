@@ -1,0 +1,22 @@
+<!--
+  PLACEHOLDER.SVG
+  Una imagen "de relleno" que se usa en TODO el sitio mientras no
+  hay fotos reales todavía. Es un dibujo hecho con formas simples
+  (no una foto), así que pesa casi nada y no depende de internet.
+
+  Cuando tengas fotos reales de tus trabajos, en cada etiqueta
+  <img> del HTML cambia:
+      src="img/placeholder.svg"
+  por, por ejemplo:
+      src="img/piso-sala-gris-01.jpg"
+  (después de copiar esa foto a la carpeta img/).
+-->
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Imagen de ejemplo, pendiente de reemplazar">
+  <rect width="800" height="600" fill="#e4d7be"/>
+  <ellipse cx="180" cy="420" rx="260" ry="180" fill="#14332e" opacity="0.15"/>
+  <ellipse cx="620" cy="160" rx="220" ry="160" fill="#a9793c" opacity="0.25"/>
+  <ellipse cx="520" cy="460" rx="180" ry="120" fill="#14332e" opacity="0.12"/>
+  <text x="400" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#14332e">
+    Agrega tu foto aquí
+  </text>
+</svg>

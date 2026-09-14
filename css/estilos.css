@@ -1,0 +1,623 @@
+/* ================================================================
+   ESTILOS.CSS
+   Esta es la ÚNICA hoja de estilos del sitio. La usan TODAS las
+   páginas (index.html, trabajos.html, contacto.html, etc.).
+   Si cambias algo aquí, cambia en todo el sitio a la vez.
+
+   Está organizada en secciones numeradas. Usa Ctrl+F (Cmd+F en Mac)
+   y busca el número de sección para saltar directo a ella.
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   0. FUENTES (tipografías)
+   Traemos dos familias de letra desde Google Fonts (un servicio
+   gratuito de Google). 'Fraunces' es la fuente con carácter que
+   usamos en los títulos; 'Karla' es la fuente limpia que usamos
+   en el texto normal. @import trae el archivo de la fuente antes
+   de que se dibuje cualquier otra cosa.
+   ---------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;700&display=swap');
+
+/* ----------------------------------------------------------------
+   1. VARIABLES DE DISEÑO (custom properties)
+   Piensa en esto como "cajitas con nombre": guardamos un valor
+   una sola vez y lo usamos en todo el archivo escribiendo
+   var(--nombre-de-la-variable). Si mañana quieres cambiar el
+   color principal de TODO el sitio, lo cambias una sola vez aquí.
+   ---------------------------------------------------------------- */
+:root {
+  /* Colores. Elegidos a partir del propio material con el que
+     trabajas: el verde-tinta profundo evoca los vaciados de resina
+     color océano; el dorado evoca los pigmentos metálicos (mica)
+     que se usan en piezas de resina; el tono "papel" evoca el
+     concreto o piso pulido. */
+  --color-tinta: #14332e;         /* verde-tinta oscuro: fondo del header, el hero y el footer */
+  --color-tinta-suave: #1c4842;   /* variante un poco más clara de la tinta, para bordes/hover sobre fondo oscuro */
+  --color-papel: #f1ece1;         /* fondo claro cálido del contenido normal */
+  --color-dorado: #a9793c;        /* dorado/bronce: botones, enlaces, acentos */
+  --color-dorado-suave: #e4d7be;  /* dorado pálido: fondos suaves de sección, bordes */
+  --color-texto: #2a2622;         /* casi-negro cálido: texto principal sobre fondo claro */
+  --color-texto-tenue: #6b6459;   /* gris cálido: texto secundario (fechas, categorías) */
+
+  /* Tipografías: una familia para títulos, otra para texto corrido. */
+  --fuente-titulos: 'Fraunces', Georgia, serif;
+  --fuente-texto: 'Karla', Arial, Helvetica, sans-serif;
+
+  /* Espaciados reutilizables, para que todo el sitio respire con
+     el mismo ritmo en vez de números sueltos por todos lados. */
+  --espacio-xs: 0.5rem;
+  --espacio-s: 1rem;
+  --espacio-m: 1.75rem;
+  --espacio-l: 3rem;
+  --espacio-xl: 5.5rem;
+
+  /* Ancho máximo del contenido: en pantallas muy anchas, el texto
+     no se estira de borde a borde (sería difícil de leer). */
+  --ancho-maximo: 1180px;
+
+  /* Un radio de esquina discreto, reutilizado en fotos y botones. */
+  --radio: 6px;
+}
+
+/* ----------------------------------------------------------------
+   2. REINICIO BÁSICO (reset)
+   Cada navegador trae sus propios márgenes y tamaños por defecto
+   para etiquetas como <h1>, <p> o <ul>. Estas reglas los ponen en
+   cero para que el espaciado del sitio sea el que nosotros
+   decidimos a propósito, no un accidente del navegador.
+   ---------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* el padding y el borde se cuentan DENTRO del ancho del elemento, no se suman aparte */
+}
+
+html {
+  scroll-behavior: smooth; /* al hacer clic en un enlace tipo #seccion, se desplaza suave en vez de saltar de golpe */
+}
+
+img,
+svg {
+  max-width: 100%;  /* ninguna imagen se desborda de su contenedor */
+  display: block;   /* quita un espacio en blanco "fantasma" que los navegadores agregan debajo de las imágenes */
+}
+
+a {
+  color: inherit;         /* los enlaces heredan el color del texto que los rodea en vez del azul por defecto */
+  text-decoration: none;  /* sin subrayado por defecto; lo agregamos nosotros donde ayude a la lectura */
+}
+
+ul {
+  list-style: none; /* quitamos los puntitos por defecto de las listas; los agregamos donde se necesiten */
+}
+
+button {
+  font: inherit;      /* los botones usan la misma fuente que el resto del sitio, no la fuente del sistema operativo */
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Clase de utilidad: oculta texto visualmente pero lo deja
+   disponible para lectores de pantalla (accesibilidad). La usamos,
+   por ejemplo, en el botón del menú de celular. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Respeta a las personas que configuraron su sistema para reducir
+   animaciones (mareos, problemas vestibulares). Si esa opción está
+   activada, quitamos las transiciones suaves. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ----------------------------------------------------------------
+   3. ESTILOS BASE DEL TEXTO
+   ---------------------------------------------------------------- */
+body {
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  line-height: 1.65;              /* separación entre renglones: cómoda para leer texto corrido */
+  color: var(--color-texto);
+  background-color: var(--color-papel);
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 500;
+  line-height: 1.15;    /* los títulos van más "apretados" que el texto normal, es lo esperado en tipografía */
+  color: var(--color-texto);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.85rem; }
+h3 { font-size: 1.3rem; }
+
+p {
+  max-width: 62ch; /* "ch" = ancho de la letra "0"; 62ch evita párrafos demasiado anchos, más fáciles de leer */
+}
+
+/* En pantallas medianas/grandes, los títulos crecen un poco más. */
+@media (min-width: 768px) {
+  h1 { font-size: 3.4rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+/* Todo elemento que reciba foco por teclado (Tab) muestra un
+   contorno visible. Esto es esencial para personas que navegan
+   sin mouse; nunca debe quitarse el foco sin reemplazarlo. */
+:focus-visible {
+  outline: 3px solid var(--color-dorado);
+  outline-offset: 2px;
+}
+
+/* ----------------------------------------------------------------
+   4. CONTENEDOR Y UTILIDADES DE SECCIÓN
+   ---------------------------------------------------------------- */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;         /* centra el contenedor horizontalmente */
+  padding: 0 var(--espacio-m);
+}
+
+.seccion {
+  padding: var(--espacio-xl) 0; /* separación vertical generosa entre secciones */
+}
+
+.seccion-oscura {
+  background-color: var(--color-tinta);
+  color: var(--color-papel);
+}
+
+.seccion-dorada {
+  background-color: var(--color-dorado-suave);
+}
+
+.texto-centrado { text-align: center; }
+
+/* ----------------------------------------------------------------
+   5. ENCABEZADO Y NAVEGACIÓN
+   ---------------------------------------------------------------- */
+.cabecera {
+  background-color: var(--color-tinta);
+  position: sticky;  /* el header se queda pegado arriba al hacer scroll */
+  top: 0;
+  z-index: 50;        /* asegura que el header quede por encima del resto del contenido */
+}
+
+.cabecera-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--espacio-s);
+  padding-bottom: var(--espacio-s);
+}
+
+.marca {
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  color: var(--color-papel);
+}
+
+/* Botón de hamburguesa: solo se ve en pantallas angostas.
+   Son 3 líneas (span) apiladas con flexbox. */
+.menu-boton {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--espacio-xs);
+}
+
+.menu-boton-linea {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-papel);
+}
+
+.nav {
+  display: none; /* en celular, el menú empieza oculto */
+  flex-direction: column;
+  gap: var(--espacio-s);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-tinta);
+  padding: var(--espacio-m);
+}
+
+/* Cuando el JavaScript agrega la clase "nav-visible", el menú
+   de celular se muestra. Ver js/script.js, sección del menú. */
+.nav.nav-visible {
+  display: flex;
+}
+
+.nav a {
+  color: var(--color-papel);
+  font-weight: 500;
+  padding: var(--espacio-xs) 0;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--color-dorado-suave);
+}
+
+/* Desde tablet/escritorio: se oculta la hamburguesa y el menú se
+   muestra siempre, en fila, dentro del propio header. */
+@media (min-width: 768px) {
+  .menu-boton { display: none; }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    gap: var(--espacio-l);
+    position: static;
+    padding: 0;
+    background: none;
+  }
+}
+
+/* ----------------------------------------------------------------
+   6. BOTONES (llamadas a la acción)
+   ---------------------------------------------------------------- */
+.boton {
+  display: inline-block;
+  font-family: var(--fuente-texto);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radio);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.boton:hover,
+.boton:focus-visible {
+  transform: translateY(-2px); /* un ligero "levantamiento" al pasar el mouse, sutil */
+}
+
+.boton-primario {
+  background-color: var(--color-dorado);
+  color: var(--color-tinta);
+}
+
+.boton-primario:hover,
+.boton-primario:focus-visible {
+  background-color: #bd8a49;
+}
+
+.boton-secundario {
+  background-color: transparent;
+  color: var(--color-papel);
+  border: 1.5px solid var(--color-papel);
+}
+
+.boton-secundario:hover,
+.boton-secundario:focus-visible {
+  background-color: rgba(241, 236, 225, 0.12);
+}
+
+/* ----------------------------------------------------------------
+   7. HERO (bloque de bienvenida en index.html)
+   ---------------------------------------------------------------- */
+.hero {
+  background-color: var(--color-tinta);
+  color: var(--color-papel);
+  padding-top: var(--espacio-xl);
+  padding-bottom: var(--espacio-l);
+}
+
+.hero-fila {
+  display: grid;
+  gap: var(--espacio-l);
+  align-items: center;
+}
+
+.hero h1 { color: var(--color-papel); }
+
+.hero p {
+  margin-top: var(--espacio-s);
+  font-size: 1.1rem;
+  color: var(--color-dorado-suave);
+}
+
+.hero-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+  margin-top: var(--espacio-m);
+}
+
+.hero-imagen img {
+  border-radius: var(--radio);
+}
+
+/* Desde tablet/escritorio, el hero pasa de una columna (texto
+   arriba, foto abajo) a dos columnas lado a lado. */
+@media (min-width: 900px) {
+  .hero-fila {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+/* Franja ondulada que separa el hero (oscuro) del contenido
+   (claro). Es un SVG simple: una sola curva rellena de color.
+   Al ser del mismo color que el fondo de la sección siguiente,
+   crea el efecto de "borde derramado", como resina servida. */
+.divisor-ondulado {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.divisor-ondulado path {
+  fill: var(--color-papel);
+}
+
+/* ----------------------------------------------------------------
+   8. TARJETAS DE CATEGORÍA / TRABAJOS
+   ---------------------------------------------------------------- */
+.rejilla-categorias {
+  display: grid;
+  gap: var(--espacio-m);
+  margin-top: var(--espacio-l);
+  grid-template-columns: 1fr; /* una sola columna en celular */
+}
+
+@media (min-width: 640px) {
+  .rejilla-categorias { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+  .rejilla-categorias { grid-template-columns: repeat(3, 1fr); }
+}
+
+.tarjeta-categoria img {
+  border-radius: var(--radio);
+  aspect-ratio: 4 / 3;    /* mantiene una proporción constante aunque cambien de tamaño de foto */
+  object-fit: cover;      /* recorta la foto para llenar el espacio sin deformarla */
+}
+
+.tarjeta-categoria h3 {
+  margin-top: var(--espacio-xs);
+}
+
+.tarjeta-categoria p {
+  color: var(--color-texto-tenue);
+  font-size: 0.95rem;
+}
+
+/* La rejilla de trabajos (en trabajos.html) reutiliza la misma
+   rejilla de categorías, pero con tarjetas que llevan borde. */
+.tarjeta-trabajo {
+  border: 1px solid var(--color-dorado-suave);
+  border-radius: var(--radio);
+  overflow: hidden; /* recorta la esquina de la foto para que respete el borde redondeado */
+}
+
+.tarjeta-trabajo img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.tarjeta-trabajo-cuerpo {
+  padding: var(--espacio-s);
+}
+
+.etiqueta-categoria {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-dorado);
+  margin-bottom: var(--espacio-xs);
+}
+
+.tarjeta-trabajo p {
+  color: var(--color-texto-tenue);
+  font-size: 0.95rem;
+  margin: var(--espacio-xs) 0;
+}
+
+.enlace-ver-mas {
+  font-weight: 700;
+  color: var(--color-tinta);
+  border-bottom: 1.5px solid var(--color-dorado);
+}
+
+/* Cuando alguien hace clic en un botón de .filtro-boton (más abajo),
+   el navegador salta a un título como <h2 id="pisos">. Como el
+   encabezado queda fijo arriba (position: sticky), sin esta regla
+   ese encabezado taparía el título justo al llegar. Este margen
+   extra de scroll evita ese problema. */
+h2[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* ----------------------------------------------------------------
+   9. NAVEGACIÓN RÁPIDA POR CATEGORÍA (trabajos.html)
+   Son enlaces normales de HTML que apuntan a cada sección de la
+   página (ej: href="#pisos"), con forma de píldora. No necesitan
+   JavaScript: el propio navegador desplaza la página al hacer
+   clic. Esto mantiene el sitio simple y funciona aunque alguien
+   tenga JavaScript desactivado.
+   ---------------------------------------------------------------- */
+.fila-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  margin: var(--espacio-m) 0 var(--espacio-l);
+}
+
+.filtro-boton {
+  padding: 0.5rem 1.1rem;
+  border: 1.5px solid var(--color-dorado);
+  border-radius: 999px; /* forma de píldora */
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-tinta);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.filtro-boton:hover,
+.filtro-boton:focus-visible {
+  background-color: var(--color-dorado);
+  color: var(--color-papel);
+}
+
+/* ----------------------------------------------------------------
+   10. PÁGINA DE UN TRABAJO INDIVIDUAL
+   ---------------------------------------------------------------- */
+.volver-enlace {
+  display: inline-block;
+  margin-bottom: var(--espacio-m);
+  font-weight: 500;
+  color: var(--color-texto-tenue);
+}
+
+.trabajo-meta {
+  display: flex;
+  gap: var(--espacio-s);
+  align-items: center;
+  color: var(--color-texto-tenue);
+  font-size: 0.9rem;
+  margin-bottom: var(--espacio-m);
+}
+
+.trabajo-imagen-principal {
+  border-radius: var(--radio);
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-bottom: var(--espacio-m);
+}
+
+.galeria-trabajo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espacio-s);
+  margin: var(--espacio-m) 0;
+}
+
+.galeria-trabajo img {
+  border-radius: var(--radio);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .galeria-trabajo { grid-template-columns: repeat(3, 1fr); }
+}
+
+.trabajo-cuerpo p {
+  margin-bottom: var(--espacio-s);
+}
+
+.caja-cta {
+  background-color: var(--color-dorado-suave);
+  border-radius: var(--radio);
+  padding: var(--espacio-m);
+  margin-top: var(--espacio-l);
+  text-align: center;
+}
+
+.caja-cta .boton-primario {
+  margin-top: var(--espacio-s);
+}
+
+/* ----------------------------------------------------------------
+   11. PÁGINA DE CONTACTO
+   ---------------------------------------------------------------- */
+.rejilla-contacto {
+  display: grid;
+  gap: var(--espacio-m);
+  margin-top: var(--espacio-l);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .rejilla-contacto { grid-template-columns: repeat(3, 1fr); }
+}
+
+.tarjeta-contacto {
+  border: 1px solid var(--color-dorado-suave);
+  border-radius: var(--radio);
+  padding: var(--espacio-m);
+}
+
+.tarjeta-contacto h3 { margin-bottom: var(--espacio-xs); }
+
+.tarjeta-contacto a {
+  font-weight: 700;
+  color: var(--color-dorado);
+}
+
+/* ----------------------------------------------------------------
+   12. PIE DE PÁGINA (footer)
+   ---------------------------------------------------------------- */
+.pie {
+  background-color: var(--color-tinta);
+  color: var(--color-dorado-suave);
+  padding: var(--espacio-l) 0 var(--espacio-m);
+}
+
+.pie-fila {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+@media (min-width: 768px) {
+  .pie-fila {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.pie h3 {
+  color: var(--color-papel);
+  font-size: 1.1rem;
+  margin-bottom: var(--espacio-xs);
+}
+
+.pie-redes {
+  display: flex;
+  gap: var(--espacio-s);
+  margin-top: var(--espacio-xs);
+}
+
+.pie-copyright {
+  margin-top: var(--espacio-l);
+  font-size: 0.85rem;
+  color: var(--color-tinta-suave);
+  border-top: 1px solid var(--color-tinta-suave);
+  padding-top: var(--espacio-m);
+}
+
+/* ----------------------------------------------------------------
+   13. PÁGINA "SOBRE MÍ"
+   Reutiliza .hero-fila (sección 7) para la franja de dos columnas
+   con foto, así que aquí solo hace falta el estilo de la lista de
+   materiales.
+   ---------------------------------------------------------------- */
+.lista-simple {
+  margin-top: var(--espacio-s);
+}
+
+.lista-simple li {
+  padding: var(--espacio-xs) 0;
+  border-bottom: 1px solid var(--color-dorado-suave);
+}

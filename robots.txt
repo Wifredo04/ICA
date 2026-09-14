@@ -1,0 +1,12 @@
+# ROBOTS.TXT
+# Le dice a los robots de los buscadores (Google, Bing, etc.) qué
+# partes del sitio pueden recorrer. "Allow: /" significa "todo el
+# sitio está permitido". La línea "Sitemap" les indica dónde está
+# el mapa completo de páginas (ver sitemap.xml).
+#
+# EDITA ESTO: cambia la URL de abajo por tu dirección real.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://tu-usuario.github.io/nombre-repo/sitemap.xml
