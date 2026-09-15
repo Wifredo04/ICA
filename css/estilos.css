@@ -621,3 +621,40 @@ h2[id] {
   padding: var(--espacio-xs) 0;
   border-bottom: 1px solid var(--color-dorado-suave);
 }
+
+/* ----------------------------------------------------------------
+   14. TIENDA Y FORMULARIO DE CORREO
+   ---------------------------------------------------------------- */
+
+/* Precio dentro de una tarjeta de producto (reutiliza .tarjeta-trabajo,
+   la misma tarjeta que usan los trabajos, para que la tienda se vea
+   consistente con el resto del sitio) */
+.producto-precio {
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  color: var(--color-dorado);
+  font-weight: 600;
+}
+
+/* Formulario de correo del pie de página: el campo de texto y el
+   botón van en una misma fila, y se apilan solos si no caben */
+.form-suscribir {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  margin-top: var(--espacio-s);
+}
+
+.form-suscribir input[type="email"] {
+  flex: 1;
+  min-width: 10rem;
+  padding: 0.6rem 0.85rem;
+  border: none;
+  border-radius: 3px;
+  font-family: var(--fuente-texto);
+  font-size: 0.95rem;
+}
+
+.form-suscribir .boton {
+  padding: 0.6rem 1.25rem;
+}

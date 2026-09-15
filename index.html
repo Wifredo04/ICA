@@ -72,6 +72,8 @@
   <!-- Trae las dos tipografías del sitio desde Google Fonts (gratis) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Esta línea sí trae las tipografías; las dos de arriba solo "avisan" al navegador que se conecte más rápido -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Nuestra única hoja de estilos, compartida por todas las páginas -->
   <link rel="stylesheet" href="css/estilos.css">
@@ -120,6 +122,7 @@
       <nav class="nav" id="nav-principal" aria-label="Principal">
         <a href="index.html" aria-current="page">Inicio</a>
         <a href="trabajos.html">Trabajos</a>
+        <a href="tienda.html">Tienda</a>
         <a href="sobre.html">Sobre mí</a>
         <a href="contacto.html">Contacto</a>
       </nav>
@@ -236,6 +239,7 @@
         <nav aria-label="Pie de página">
           <a href="index.html">Inicio</a><br>
           <a href="trabajos.html">Trabajos</a><br>
+          <a href="tienda.html">Tienda</a><br>
           <a href="sobre.html">Sobre mí</a><br>
           <a href="contacto.html">Contacto</a>
         </nav>
@@ -247,6 +251,17 @@
           <a href="https://wa.me/18090000000">WhatsApp</a>
           <a href="https://instagram.com/tu_usuario">Instagram</a>
         </div>
+      </div>
+      <div class="pie-suscribir">
+        <h3>Novedades por correo</h3>
+        <p>Avisos cuando subamos piezas o trabajos nuevos.</p>
+        <!-- EDITA ESTO: instrucciones completas para activar este formulario en README.md -->
+        <form action="https://buttondown.com/api/emails/embed-subscribe/tu-usuario" method="post" class="form-suscribir">
+          <label for="correo-suscripcion" class="sr-only">Tu correo electrónico</label>
+          <input type="email" name="email" id="correo-suscripcion" placeholder="tu@correo.com" required>
+          <input type="hidden" name="embed" value="1">
+          <button type="submit" class="boton boton-primario">Suscribirme</button>
+        </form>
       </div>
       <p class="pie-copyright">© <span id="anio"></span> [Tu Marca]. Todos los derechos reservados.</p>
     </div>

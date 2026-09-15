@@ -37,6 +37,7 @@
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -53,6 +54,7 @@
       <nav class="nav" id="nav-principal" aria-label="Principal">
         <a href="index.html">Inicio</a>
         <a href="trabajos.html" aria-current="page">Trabajos</a>
+        <a href="tienda.html">Tienda</a>
         <a href="sobre.html">Sobre mí</a>
         <a href="contacto.html">Contacto</a>
       </nav>
@@ -240,6 +242,7 @@
         <nav aria-label="Pie de página">
           <a href="index.html">Inicio</a><br>
           <a href="trabajos.html">Trabajos</a><br>
+          <a href="tienda.html">Tienda</a><br>
           <a href="sobre.html">Sobre mí</a><br>
           <a href="contacto.html">Contacto</a>
         </nav>
@@ -250,6 +253,16 @@
           <a href="https://wa.me/18090000000">WhatsApp</a>
           <a href="https://instagram.com/tu_usuario">Instagram</a>
         </div>
+      </div>
+      <div class="pie-suscribir">
+        <h3>Novedades por correo</h3>
+        <p>Avisos cuando subamos piezas o trabajos nuevos.</p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/tu-usuario" method="post" class="form-suscribir">
+          <label for="correo-suscripcion" class="sr-only">Tu correo electrónico</label>
+          <input type="email" name="email" id="correo-suscripcion" placeholder="tu@correo.com" required>
+          <input type="hidden" name="embed" value="1">
+          <button type="submit" class="boton boton-primario">Suscribirme</button>
+        </form>
       </div>
       <p class="pie-copyright">© <span id="anio"></span> [Tu Marca]. Todos los derechos reservados.</p>
     </div>

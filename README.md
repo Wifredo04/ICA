@@ -11,6 +11,7 @@ mesas, paredes en 3D, cuadros y bisutería.
 | `index.html`                | Página de inicio                                         |
 | `trabajos.html`              | Portafolio: los trabajos organizados por categoría       |
 | `plantilla-trabajo.html`     | Plantilla que duplicas para cada trabajo nuevo           |
+| `tienda.html`                 | Piezas de bisutería a la venta, con compra por WhatsApp  |
 | `sobre.html`                 | Sobre ti / tu oficio                                     |
 | `contacto.html`              | WhatsApp, Instagram y correo                             |
 | `css/estilos.css`            | Todos los estilos visuales del sitio (un solo archivo)   |
@@ -29,6 +30,8 @@ datos reales:
 - [ ] `18090000000` (dentro de los enlaces `wa.me`) → tu número de WhatsApp, con código de país y sin espacios ni signos
 - [ ] `tu_usuario` (en los enlaces de Instagram) → tu usuario real
 - [ ] `correo@tudominio.com` → tu correo real
+- [ ] `[Precio]` (en `tienda.html`) → el precio real de cada pieza
+- [ ] `buttondown.com/api/emails/embed-subscribe/tu-usuario` (en cada pie de página) → la dirección real de tu formulario (ver más abajo cómo conseguirla)
 - [ ] `tu-usuario.github.io/nombre-repo` → la dirección real de tu sitio (la sabrás en cuanto actives GitHub Pages)
 - [ ] Las imágenes `img/placeholder.svg` → tus fotos reales (ver más abajo)
 
@@ -45,6 +48,25 @@ datos reales:
 3. Borra la línea `<meta name="robots" content="noindex">` de ese archivo nuevo (esa línea es solo para que la plantilla en blanco no se indexe).
 4. En `trabajos.html`, dentro de la categoría correspondiente, copia un bloque `<article class="tarjeta-trabajo">` y cambia su foto, título, descripción y el `href` para que apunte a tu archivo nuevo.
 5. (Opcional pero recomendado) Agrega la nueva página a `sitemap.xml`.
+
+## Cómo agregar una pieza nueva a la tienda
+
+1. Abre `tienda.html` y copia un bloque completo `<article class="tarjeta-trabajo">` (desde `<article` hasta `</article>`).
+2. Pégalo donde quieras que aparezca la pieza nueva.
+3. Cambia la foto, el título, la descripción y el `[Precio]`.
+4. En el enlace "Comprar por WhatsApp", después de `pieza%3A%20` escribe el nombre de la pieza, reemplazando cada espacio por `%20` (por ejemplo, "Aretes de luna" se escribe `Aretes%20de%20luna`).
+
+## Cómo activar el formulario de correo (Buttondown)
+
+El formulario ya está en el pie de página de todas las páginas, pero
+todavía apunta a una dirección de ejemplo. Para conectarlo a tu propia
+lista de correos:
+
+1. Crea una cuenta gratis en [buttondown.com](https://buttondown.com) (también puedes usar Mailchimp, pero las instrucciones de aquí son para Buttondown, que es más simple para esto).
+2. En tu panel de Buttondown, busca la sección para insertar el formulario en un sitio (embed / HTML).
+3. Ahí verás una dirección parecida a `https://buttondown.com/api/emails/embed-subscribe/tu-usuario-real`.
+4. En **todos** los archivos `.html` (son 6: index, trabajos, plantilla-trabajo, tienda, sobre y contacto), busca `buttondown.com/api/emails/embed-subscribe/tu-usuario` y reemplaza `tu-usuario` por tu usuario real de Buttondown. En VS Code, `Ctrl+Shift+H` (`Cmd+Shift+H` en Mac) abre "buscar y reemplazar en todos los archivos", para no tener que hacerlo uno por uno.
+5. Prueba el formulario con tu propio correo antes de publicarlo.
 
 ## Cómo subir los cambios a GitHub (siempre los mismos 3 pasos)
 
