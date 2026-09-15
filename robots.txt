@@ -9,4 +9,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tu-usuario.github.io/nombre-repo/sitemap.xml
+Sitemap: https://wifredo04.github.io/ICA/sitemap.xml

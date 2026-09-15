@@ -32,7 +32,7 @@ datos reales:
 - [ ] `correo@tudominio.com` → tu correo real
 - [ ] `[Precio]` (en `tienda.html`) → el precio real de cada pieza
 - [ ] `buttondown.com/api/emails/embed-subscribe/tu-usuario` (en cada pie de página) → la dirección real de tu formulario (ver más abajo cómo conseguirla)
-- [ ] `tu-usuario.github.io/nombre-repo` → la dirección real de tu sitio (la sabrás en cuanto actives GitHub Pages)
+- [x] `wifredo04.github.io/ICA` → ya es tu dirección real (el sitio está publicado)
 - [ ] Las imágenes `img/placeholder.svg` → tus fotos reales (ver más abajo)
 
 ## Cómo agregar fotos reales

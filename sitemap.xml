@@ -14,41 +14,41 @@
   nueva. La plantilla en blanco y las páginas de ejemplo no
   necesitan estar aquí.
 
-  Reemplaza "https://tu-usuario.github.io/nombre-repo/" por tu
+  Reemplaza "https://wifredo04.github.io/ICA/" por tu
   dirección real en las 5 líneas <loc> de abajo.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://tu-usuario.github.io/nombre-repo/index.html</loc>
+    <loc>https://wifredo04.github.io/ICA/index.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://tu-usuario.github.io/nombre-repo/trabajos.html</loc>
+    <loc>https://wifredo04.github.io/ICA/trabajos.html</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://tu-usuario.github.io/nombre-repo/tienda.html</loc>
+    <loc>https://wifredo04.github.io/ICA/tienda.html</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://tu-usuario.github.io/nombre-repo/sobre.html</loc>
+    <loc>https://wifredo04.github.io/ICA/sobre.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://tu-usuario.github.io/nombre-repo/contacto.html</loc>
+    <loc>https://wifredo04.github.io/ICA/contacto.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
