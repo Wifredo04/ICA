@@ -9,4 +9,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wifredo04.github.io/ICA/sitemap.xml
+Sitemap: https://wifredo04.github.io/ResiEpox/sitemap.xml
