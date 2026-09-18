@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  SITEMAP.XML
-  Es un "índice" en un formato que los buscadores leen, con la
-  lista de páginas que quieres que encuentren e indexen. No es
-  obligatorio para que Google encuentre tu sitio, pero lo ayuda
-  a hacerlo más rápido y completo, sobre todo cuando el sitio es
-  nuevo y todavía nadie enlaza hacia él desde otros lugares.
-
-  CUÁNDO ACTUALIZAR ESTE ARCHIVO:
-  Cada vez que publiques un trabajo nuevo (un archivo duplicado a
-  partir de plantilla-trabajo.html), copia uno de los bloques <url>
-  de más abajo y cambia el <loc> por la dirección de esa página
-  nueva. La plantilla en blanco y las páginas de ejemplo no
-  necesitan estar aquí.
-
-  Reemplaza "https://wifredo04.github.io/ICA/" por tu
-  dirección real en las 5 líneas <loc> de abajo.
--->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>

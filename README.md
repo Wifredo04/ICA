@@ -1,4 +1,4 @@
-# [Tu Marca] — Sitio web de portafolio y blog
+# ResiEpox — Sitio web de portafolio y blog
 
 Sitio de una sola vez (HTML, CSS y JavaScript simple, sin frameworks)
 para mostrar trabajos de resina epóxica y porcelanato líquido: pisos,
@@ -26,8 +26,8 @@ Busca estos textos en todos los archivos (en VS Code: `Ctrl+Shift+F` /
 `Cmd+Shift+F` para "buscar en todos los archivos") y cámbialos por tus
 datos reales:
 
-- [ ] `[Tu Marca]` → el nombre real de tu negocio
-- [ ] `18090000000` (dentro de los enlaces `wa.me`) → tu número de WhatsApp, con código de país y sin espacios ni signos
+- [x] `ResiEpox` → ya es el nombre real de tu negocio
+- [x] `18494737162` → ya es tu número real de WhatsApp
 - [ ] `tu_usuario` (en los enlaces de Instagram) → tu usuario real
 - [ ] `correo@tudominio.com` → tu correo real
 - [ ] `[Precio]` (en `tienda.html`) → el precio real de cada pieza

@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* -----------------------------------------------------------
      2. AÑO AUTOMÁTICO EN EL PIE DE PÁGINA
-     Así el "© 2026 [Tu Marca]" nunca queda desactualizado: se
+     Así el "© 2026 ResiEpox" nunca queda desactualizado: se
      escribe solo, tomando el año de la computadora de quien
      visita el sitio.
      ----------------------------------------------------------- */
