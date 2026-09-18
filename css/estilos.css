@@ -31,20 +31,13 @@
      color océano; el dorado evoca los pigmentos metálicos (mica)
      que se usan en piezas de resina; el tono "papel" evoca el
      concreto o piso pulido. */
-  --color-blanco: #ffffff;
-  /* verde-tinta oscuro: fondo del header, el hero y el footer */
-  --color-tinta-suave: #1c4842;
-  /* variante un poco más clara de la tinta, para bordes/hover sobre fondo oscuro */
-  --color-papel: #f1ece1;
-  /* fondo claro cálido del contenido normal */
-  --color-dorado: #a9793c;
-  /* dorado/bronce: botones, enlaces, acentos */
-  --color-dorado-suave: #e4d7be;
-  /* dorado pálido: fondos suaves de sección, bordes */
-  --color-texto: #2a2622;
-  /* casi-negro cálido: texto principal sobre fondo claro */
-  --color-texto-tenue: #6b6459;
-  /* gris cálido: texto secundario (fechas, categorías) */
+  --color-tinta: #14332e;         /* verde-tinta oscuro: fondo del header, el hero y el footer */
+  --color-tinta-suave: #1c4842;   /* variante un poco más clara de la tinta, para bordes/hover sobre fondo oscuro */
+  --color-papel: #f1ece1;         /* fondo claro cálido del contenido normal */
+  --color-dorado: #a9793c;        /* dorado/bronce: botones, enlaces, acentos */
+  --color-dorado-suave: #e4d7be;  /* dorado pálido: fondos suaves de sección, bordes */
+  --color-texto: #2a2622;         /* casi-negro cálido: texto principal sobre fondo claro */
+  --color-texto-tenue: #6b6459;   /* gris cálido: texto secundario (fechas, categorías) */
 
   /* Tipografías: una familia para títulos, otra para texto corrido. */
   --fuente-titulos: 'Fraunces', Georgia, serif;
@@ -76,38 +69,30 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  /* el padding y el borde se cuentan DENTRO del ancho del elemento, no se suman aparte */
+  box-sizing: border-box; /* el padding y el borde se cuentan DENTRO del ancho del elemento, no se suman aparte */
 }
 
 html {
-  scroll-behavior: smooth;
-  /* al hacer clic en un enlace tipo #seccion, se desplaza suave en vez de saltar de golpe */
+  scroll-behavior: smooth; /* al hacer clic en un enlace tipo #seccion, se desplaza suave en vez de saltar de golpe */
 }
 
 img,
 svg {
-  max-width: 100%;
-  /* ninguna imagen se desborda de su contenedor */
-  display: block;
-  /* quita un espacio en blanco "fantasma" que los navegadores agregan debajo de las imágenes */
+  max-width: 100%;  /* ninguna imagen se desborda de su contenedor */
+  display: block;   /* quita un espacio en blanco "fantasma" que los navegadores agregan debajo de las imágenes */
 }
 
 a {
-  color: inherit;
-  /* los enlaces heredan el color del texto que los rodea en vez del azul por defecto */
-  text-decoration: none;
-  /* sin subrayado por defecto; lo agregamos nosotros donde ayude a la lectura */
+  color: inherit;         /* los enlaces heredan el color del texto que los rodea en vez del azul por defecto */
+  text-decoration: none;  /* sin subrayado por defecto; lo agregamos nosotros donde ayude a la lectura */
 }
 
 ul {
-  list-style: none;
-  /* quitamos los puntitos por defecto de las listas; los agregamos donde se necesiten */
+  list-style: none; /* quitamos los puntitos por defecto de las listas; los agregamos donde se necesiten */
 }
 
 button {
-  font: inherit;
-  /* los botones usan la misma fuente que el resto del sitio, no la fuente del sistema operativo */
+  font: inherit;      /* los botones usan la misma fuente que el resto del sitio, no la fuente del sistema operativo */
   cursor: pointer;
   border: none;
   background: none;
@@ -144,52 +129,31 @@ button {
 body {
   font-family: var(--fuente-texto);
   font-size: 1rem;
-  line-height: 1.65;
-  /* separación entre renglones: cómoda para leer texto corrido */
+  line-height: 1.65;              /* separación entre renglones: cómoda para leer texto corrido */
   color: var(--color-texto);
   background-color: var(--color-papel);
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: var(--fuente-titulos);
   font-weight: 500;
-  line-height: 1.15;
-  /* los títulos van más "apretados" que el texto normal, es lo esperado en tipografía */
+  line-height: 1.15;    /* los títulos van más "apretados" que el texto normal, es lo esperado en tipografía */
   color: var(--color-texto);
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 1.85rem;
-}
-
-h3 {
-  font-size: 1.3rem;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.85rem; }
+h3 { font-size: 1.3rem; }
 
 p {
-  max-width: 62ch;
-  /* "ch" = ancho de la letra "0"; 62ch evita párrafos demasiado anchos, más fáciles de leer */
+  max-width: 62ch; /* "ch" = ancho de la letra "0"; 62ch evita párrafos demasiado anchos, más fáciles de leer */
 }
 
 /* En pantallas medianas/grandes, los títulos crecen un poco más. */
 @media (min-width: 768px) {
-  h1 {
-    font-size: 3.4rem;
-  }
-
-  h2 {
-    font-size: 2.25rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
+  h1 { font-size: 3.4rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.5rem; }
 }
 
 /* Todo elemento que reciba foco por teclado (Tab) muestra un
@@ -206,14 +170,12 @@ p {
 .contenedor {
   width: 100%;
   max-width: var(--ancho-maximo);
-  margin: 0 auto;
-  /* centra el contenedor horizontalmente */
+  margin: 0 auto;         /* centra el contenedor horizontalmente */
   padding: 0 var(--espacio-m);
 }
 
 .seccion {
-  padding: var(--espacio-xl) 0;
-  /* separación vertical generosa entre secciones */
+  padding: var(--espacio-xl) 0; /* separación vertical generosa entre secciones */
 }
 
 .seccion-oscura {
@@ -225,20 +187,16 @@ p {
   background-color: var(--color-dorado-suave);
 }
 
-.texto-centrado {
-  text-align: center;
-}
+.texto-centrado { text-align: center; }
 
 /* ----------------------------------------------------------------
    5. ENCABEZADO Y NAVEGACIÓN
    ---------------------------------------------------------------- */
 .cabecera {
-  background-color: var(--color-blanco);
-  position: sticky;
-  /* el header se queda pegado arriba al hacer scroll */
+  background-color: var(--color-tinta);
+  position: sticky;  /* el header se queda pegado arriba al hacer scroll */
   top: 0;
-  z-index: 50;
-  /* asegura que el header quede por encima del resto del contenido */
+  z-index: 50;        /* asegura que el header quede por encima del resto del contenido */
 }
 
 .cabecera-fila {
@@ -250,19 +208,9 @@ p {
 }
 
 .marca {
-  display: block;
-  width: 330px;
-}
-
-.marca img {
-  width: 100%;
-  height: auto;
-}
-
-@media (min-width: 768px) {
-  .marca {
-    width: 500px;
-  }
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  color: var(--color-papel);
 }
 
 /* Botón de hamburguesa: solo se ve en pantallas angostas.
@@ -281,8 +229,7 @@ p {
 }
 
 .nav {
-  display: none;
-  /* en celular, el menú empieza oculto */
+  display: none; /* en celular, el menú empieza oculto */
   flex-direction: column;
   gap: var(--espacio-s);
   position: absolute;
@@ -313,9 +260,7 @@ p {
 /* Desde tablet/escritorio: se oculta la hamburguesa y el menú se
    muestra siempre, en fila, dentro del propio header. */
 @media (min-width: 768px) {
-  .menu-boton {
-    display: none;
-  }
+  .menu-boton { display: none; }
 
   .nav {
     display: flex;
@@ -342,8 +287,7 @@ p {
 
 .boton:hover,
 .boton:focus-visible {
-  transform: translateY(-2px);
-  /* un ligero "levantamiento" al pasar el mouse, sutil */
+  transform: translateY(-2px); /* un ligero "levantamiento" al pasar el mouse, sutil */
 }
 
 .boton-primario {
@@ -383,9 +327,7 @@ p {
   align-items: center;
 }
 
-.hero h1 {
-  color: var(--color-papel);
-}
+.hero h1 { color: var(--color-papel); }
 
 .hero p {
   margin-top: var(--espacio-s);
@@ -433,28 +375,21 @@ p {
   display: grid;
   gap: var(--espacio-m);
   margin-top: var(--espacio-l);
-  grid-template-columns: 1fr;
-  /* una sola columna en celular */
+  grid-template-columns: 1fr; /* una sola columna en celular */
 }
 
 @media (min-width: 640px) {
-  .rejilla-categorias {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .rejilla-categorias { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 1000px) {
-  .rejilla-categorias {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .rejilla-categorias { grid-template-columns: repeat(3, 1fr); }
 }
 
 .tarjeta-categoria img {
   border-radius: var(--radio);
-  aspect-ratio: 4 / 3;
-  /* mantiene una proporción constante aunque cambien de tamaño de foto */
-  object-fit: cover;
-  /* recorta la foto para llenar el espacio sin deformarla */
+  aspect-ratio: 4 / 3;    /* mantiene una proporción constante aunque cambien de tamaño de foto */
+  object-fit: cover;      /* recorta la foto para llenar el espacio sin deformarla */
 }
 
 .tarjeta-categoria h3 {
@@ -471,8 +406,7 @@ p {
 .tarjeta-trabajo {
   border: 1px solid var(--color-dorado-suave);
   border-radius: var(--radio);
-  overflow: hidden;
-  /* recorta la esquina de la foto para que respete el borde redondeado */
+  overflow: hidden; /* recorta la esquina de la foto para que respete el borde redondeado */
 }
 
 .tarjeta-trabajo img {
@@ -531,8 +465,7 @@ h2[id] {
 .filtro-boton {
   padding: 0.5rem 1.1rem;
   border: 1.5px solid var(--color-dorado);
-  border-radius: 999px;
-  /* forma de píldora */
+  border-radius: 999px; /* forma de píldora */
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-tinta);
@@ -585,9 +518,7 @@ h2[id] {
 }
 
 @media (min-width: 640px) {
-  .galeria-trabajo {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .galeria-trabajo { grid-template-columns: repeat(3, 1fr); }
 }
 
 .trabajo-cuerpo p {
@@ -617,9 +548,7 @@ h2[id] {
 }
 
 @media (min-width: 768px) {
-  .rejilla-contacto {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .rejilla-contacto { grid-template-columns: repeat(3, 1fr); }
 }
 
 .tarjeta-contacto {
@@ -628,9 +557,7 @@ h2[id] {
   padding: var(--espacio-m);
 }
 
-.tarjeta-contacto h3 {
-  margin-bottom: var(--espacio-xs);
-}
+.tarjeta-contacto h3 { margin-bottom: var(--espacio-xs); }
 
 .tarjeta-contacto a {
   font-weight: 700;
