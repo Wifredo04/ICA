@@ -251,13 +251,18 @@ p {
 
 .marca {
   display: block;
-  width: 600px;
+  width: 180px;
 }
 
 .marca img {
   width: 100%;
-  max-height: 300px;
-  height: none;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .marca {
+    width: 240px;
+  }
 }
 
 /* Botón de hamburguesa: solo se ve en pantallas angostas.
