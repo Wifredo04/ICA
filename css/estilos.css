@@ -208,9 +208,13 @@ p {
 }
 
 .marca {
-  font-family: var(--fuente-titulos);
-  font-size: 1.35rem;
-  color: var(--color-papel);
+  display: block;
+  width: 180px;
+}
+
+.marca img {
+  width: 100%;
+  height: auto;
 }
 
 /* Botón de hamburguesa: solo se ve en pantallas angostas.
