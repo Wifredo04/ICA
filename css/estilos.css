@@ -31,7 +31,7 @@
      color océano; el dorado evoca los pigmentos metálicos (mica)
      que se usan en piezas de resina; el tono "papel" evoca el
      concreto o piso pulido. */
-  --color-tinta: #ffffff;
+  --color-blanco: #ffffff;
   /* verde-tinta oscuro: fondo del header, el hero y el footer */
   --color-tinta-suave: #1c4842;
   /* variante un poco más clara de la tinta, para bordes/hover sobre fondo oscuro */
@@ -233,7 +233,7 @@ p {
    5. ENCABEZADO Y NAVEGACIÓN
    ---------------------------------------------------------------- */
 .cabecera {
-  background-color: var(--color-tinta);
+  background-color: var(--color-blanco);
   position: sticky;
   /* el header se queda pegado arriba al hacer scroll */
   top: 0;
