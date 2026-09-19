@@ -265,7 +265,7 @@ p {
 
 .marca img.logo-cambiando {
   opacity: 0;
-  transform: scale(0.97);
+  transform: scale(2.97);
 }
 
 /* Botón de hamburguesa: solo se ve en pantallas angostas.
