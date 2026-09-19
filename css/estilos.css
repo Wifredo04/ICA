@@ -260,6 +260,12 @@ p {
   width: 100%;
   max-width: 450px;
   height: auto;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.marca img.logo-cambiando {
+  opacity: 0;
+  transform: scale(0.97);
 }
 
 /* Botón de hamburguesa: solo se ve en pantallas angostas.

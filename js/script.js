@@ -46,18 +46,18 @@ document.addEventListener('DOMContentLoaded', function () {
      2. LOGO DEL ENCABEZADO SEGÚN EL DESPLAZAMIENTO
      ----------------------------------------------------------- */
   var logos = document.querySelectorAll('.marca img[data-logo-normal][data-logo-scroll]');
-  var ultimaPosicionScroll = window.scrollY;
   var logoDeNavegacionActivo = false;
+  var temporizadoresLogo = new WeakMap();
 
   function actualizarLogo() {
     var posicionActual = window.scrollY;
-    var diferenciaScroll = posicionActual - ultimaPosicionScroll;
+    var nuevoEstado = posicionActual >= 24;
 
-    if (posicionActual <= 0 || diferenciaScroll > 8) {
-      logoDeNavegacionActivo = false;
-    } else if (diferenciaScroll < -8) {
-      logoDeNavegacionActivo = true;
+    if (nuevoEstado === logoDeNavegacionActivo) {
+      return;
     }
+
+    logoDeNavegacionActivo = nuevoEstado;
 
     logos.forEach(function (logo) {
       var logoNuevo = logoDeNavegacionActivo
@@ -65,15 +65,22 @@ document.addEventListener('DOMContentLoaded', function () {
         : logo.dataset.logoNormal;
 
       if (logo.getAttribute('src') !== logoNuevo) {
-        logo.setAttribute('src', logoNuevo);
+        logo.classList.add('logo-cambiando');
+
+        clearTimeout(temporizadoresLogo.get(logo));
+        temporizadoresLogo.set(logo, setTimeout(function () {
+          logo.setAttribute('src', logoNuevo);
+          requestAnimationFrame(function () {
+            logo.classList.remove('logo-cambiando');
+          });
+        }, 180));
       }
     });
-
-    ultimaPosicionScroll = posicionActual;
   }
 
   if (logos.length) {
     window.addEventListener('scroll', actualizarLogo, { passive: true });
+    actualizarLogo();
   }
 
   /* -----------------------------------------------------------
