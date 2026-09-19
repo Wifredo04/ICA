@@ -43,7 +43,41 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* -----------------------------------------------------------
-     2. AÑO AUTOMÁTICO EN EL PIE DE PÁGINA
+     2. LOGO DEL ENCABEZADO SEGÚN EL DESPLAZAMIENTO
+     ----------------------------------------------------------- */
+  var logos = document.querySelectorAll('.marca img[data-logo-normal][data-logo-scroll]');
+  var ultimaPosicionScroll = window.scrollY;
+  var logoDeNavegacionActivo = false;
+
+  function actualizarLogo() {
+    var posicionActual = window.scrollY;
+    var diferenciaScroll = posicionActual - ultimaPosicionScroll;
+
+    if (posicionActual <= 0 || diferenciaScroll > 8) {
+      logoDeNavegacionActivo = false;
+    } else if (diferenciaScroll < -8) {
+      logoDeNavegacionActivo = true;
+    }
+
+    logos.forEach(function (logo) {
+      var logoNuevo = logoDeNavegacionActivo
+        ? logo.dataset.logoScroll
+        : logo.dataset.logoNormal;
+
+      if (logo.getAttribute('src') !== logoNuevo) {
+        logo.setAttribute('src', logoNuevo);
+      }
+    });
+
+    ultimaPosicionScroll = posicionActual;
+  }
+
+  if (logos.length) {
+    window.addEventListener('scroll', actualizarLogo, { passive: true });
+  }
+
+  /* -----------------------------------------------------------
+     3. AÑO AUTOMÁTICO EN EL PIE DE PÁGINA
      Así el "© 2026 ResiEpox" nunca queda desactualizado: se
      escribe solo, tomando el año de la computadora de quien
      visita el sitio.
