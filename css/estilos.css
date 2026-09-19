@@ -256,7 +256,7 @@ p {
   flex: 0 0 180px;
 }
 
-.marca img {
+.marca img.resi-epox {
   width: 600px;
   max-width: 600px;
   height: 350px;
