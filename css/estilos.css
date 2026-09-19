@@ -413,7 +413,7 @@ p {
 /* Franja ondulada que separa el hero (oscuro) del contenido
    (claro). Es un SVG simple: una sola curva rellena de color.
    Al ser del mismo color que el fondo de la sección siguiente,
-   crea el efecto de "borde derramado", como resina servida. */
+crea el efecto de "borde derramado", como resina servida. */__
 .divisor-ondulado {
   display: block;
   width: 100%;
