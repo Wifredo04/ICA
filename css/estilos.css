@@ -11,12 +11,12 @@
 /* ----------------------------------------------------------------
    0. FUENTES (tipografías)
    Traemos dos familias de letra desde Google Fonts (un servicio
-   gratuito de Google). 'Fraunces' es la fuente con carácter que
-   usamos en los títulos; 'Karla' es la fuente limpia que usamos
+  gratuito de Google). 'Fraunces' es la fuente con carácter que
+  usamos en los títulos; 'Montserrat' es la fuente limpia que usamos
    en el texto normal. @import trae el archivo de la fuente antes
    de que se dibuje cualquier otra cosa.
    ---------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Montserrat:wght@400&display=swap');
 
 /* ----------------------------------------------------------------
    1. VARIABLES DE DISEÑO (custom properties)
@@ -48,7 +48,7 @@
 
   /* Tipografías: una familia para títulos, otra para texto corrido. */
   --fuente-titulos: 'Fraunces', Georgia, serif;
-  --fuente-texto: 'Karla', Arial, Helvetica, sans-serif;
+  --fuente-texto: 'Montserrat', Arial, Helvetica, sans-serif;
 
   /* Espaciados reutilizables, para que todo el sitio respire con
      el mismo ritmo en vez de números sueltos por todos lados. */
