@@ -303,7 +303,7 @@ p {
 }
 
 .nav a {
-  color: var(--color-papel);
+  color: var(--color-texto);
   font-weight: 500;
   padding: var(--espacio-xs) 0;
 }
@@ -327,6 +327,12 @@ p {
     position: static;
     padding: 0;
     background: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav a {
+    color: var(--color-papel);
   }
 }
 
