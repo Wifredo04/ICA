@@ -260,7 +260,7 @@ p {
   width: 100%;
   max-width: 450px;
   height: auto;
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition: opacity 0.28s ease, transform 0.18s ease;
 }
 
 .marca img.logo-cambiando {
