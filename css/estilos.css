@@ -259,7 +259,7 @@ p {
 .marca img {
   width: 500px;
   max-width: 500px;
-  height: 150px;
+  height: 100px;
   object-fit: contain;
 }
 
