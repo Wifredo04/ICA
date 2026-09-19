@@ -257,9 +257,9 @@ p {
 }
 
 .marca img {
-  width: 600px;
-  max-width: 600px;
-  height: 180px;
+  width: 500px;
+  max-width: 500px;
+  height: 150px;
   object-fit: contain;
 }
 
